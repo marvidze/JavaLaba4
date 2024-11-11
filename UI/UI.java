@@ -3,6 +3,7 @@ package UI;
 import java.util.Scanner;
 
 import realization.UserVector;
+import realization.UserWriter;
 
 public class UI {
 
