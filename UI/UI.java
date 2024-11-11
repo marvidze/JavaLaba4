@@ -19,20 +19,24 @@ public class UI {
     }
 
     static private void printVector(UserVector vector) {
-        System.out.println(vector.getStringVector());
+        System.out.println(vector.getStringValue());
         System.out.println("");
     }
 
     public void run() {
+        String[] arrayData = new String[4];
         UserVector vector = new UserVector(UserVector.splitLine(input()));
-        System.out.println("Начальный вектор: ");
+        System.out.print("Начальный вектор: ");
         printVector(vector);
-        System.out.println("Сортированный вектор: ");
+        arrayData[0] = vector.getStringValue();
+        System.out.print("Сортированный вектор: ");
         vector.vectorSort();
+        arrayData[1] = vector.getStringValue();
         printVector(vector);
-        System.out.println("Среднее значение вектора: ");
-
-        System.out.println("Медианное значение вектора: ");
-
+        System.out.print("Среднее значение вектора: ");
+        arrayData[2] = vector.getAverageValue();
+        System.out.print("Медианное значение вектора: ");
+        arrayData[3] = vector.getMedianValue();
+        UserWriter.WriteIntoFile(arrayData);
     }
 }

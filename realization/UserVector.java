@@ -7,6 +7,8 @@ import java.util.Vector;
 public class UserVector {
 
     private Vector<Double> vector;
+    private String medianValue;
+    private String averageValue;
 
     public UserVector(Double[] arrayNumbers) {
         vector = new Vector<>(Arrays.asList(arrayNumbers));
@@ -31,7 +33,7 @@ public class UserVector {
         Collections.sort(vector);
     }
 
-    public String getStringVector() {
+    public String getStringValue() {
         String vectorString = new String();
         for (int i = 0; i < vector.size(); i++) {
             vectorString += vector.get(i) + " ";
@@ -39,4 +41,13 @@ public class UserVector {
 
         return vectorString;
     }
+
+    public String getAverageValue() {
+        return averageValue;
+    }
+
+    public String getMedianValue() {
+        return medianValue;
+    }
+
 }

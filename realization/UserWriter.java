@@ -8,7 +8,7 @@ public class UserWriter {
     public UserWriter() {
     }
 
-    public boolean WriteIntoFile(String[] arrStrings) {
+    public static boolean WriteIntoFile(String[] arrStrings) {
         try (FileWriter writer = new FileWriter("InputInfoVector.txt", true)) {
             for (String str : arrStrings) {
                 writer.write(str + '\n');
