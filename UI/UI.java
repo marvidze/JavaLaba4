@@ -2,6 +2,8 @@ package UI;
 
 import java.util.Scanner;
 
+import realization.UserVector;
+
 public class UI {
 
     public UI() {
@@ -16,6 +18,7 @@ public class UI {
     }
 
     public void run() {
-
+        UserVector vector = new UserVector(UserVector.splitLine(input()));
+        vector.getStringVector();
     }
 }

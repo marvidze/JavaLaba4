@@ -5,21 +5,24 @@ import java.util.Vector;
 
 public class UserVector {
 
-    private Vector<Boolean> vector;
+    private Vector<Double> vector;
 
-    public UserVector(boolean arrayNumbers) {
+    public UserVector(Double[] arrayNumbers) {
         vector = new Vector<>(Arrays.asList(arrayNumbers));
     };
 
-    static public boolean[] splitLine(String line) {
+    static public Double[] splitLine(String line) {
         String[] arrayLine = line.split(" ");
-        boolean[] arrayNumbers = new boolean[arrayLine.length];
+        Double[] arrayNumbers = new Double[arrayLine.length];
 
         for (int i = 0; i < arrayLine.length; i++) {
-            arrayNumbers[i] = Boolean.parseBoolean(arrayLine[i]);
+            arrayNumbers[i] = Double.parseDouble(arrayLine[i]);
         }
 
         return arrayNumbers;
+    }
 
+    public void getStringVector() {
+        System.out.println(vector.size());
     }
 }
