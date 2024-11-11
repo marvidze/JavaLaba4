@@ -34,9 +34,11 @@ public class UI {
         arrayData[1] = vector.getStringValue();
         printVector(vector);
         System.out.print("Среднее значение вектора: ");
+        System.out.println(vector.getAverageValue());
         arrayData[2] = vector.getAverageValue();
         System.out.print("Медианное значение вектора: ");
         arrayData[3] = vector.getMedianValue();
+        System.out.println(vector.getMedianValue());
         UserWriter.WriteIntoFile(arrayData);
     }
 }

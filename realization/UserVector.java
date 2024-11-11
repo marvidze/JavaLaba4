@@ -7,8 +7,6 @@ import java.util.Vector;
 public class UserVector {
 
     private Vector<Double> vector;
-    private String medianValue;
-    private String averageValue;
 
     public UserVector(Double[] arrayNumbers) {
         vector = new Vector<>(Arrays.asList(arrayNumbers));
@@ -50,8 +48,8 @@ public class UserVector {
             // Если длина вектора четная, возвращаем среднее двух центральных элементов
             Double a = vector.get(vector.size() / 2 - 1);
             Double b = vector.get(vector.size() / 2);
-            Double c = a + b;
-            return c.toString();
+
+            return a.toString() + " " + b.toString();
         }
     }
 
