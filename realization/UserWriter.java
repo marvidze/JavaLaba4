@@ -3,9 +3,9 @@ package realization;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Writer {
+public class UserWriter {
 
-    public Writer() {}
+    public UserWriter() {}
 
     public boolean WriteIntoFile(String[] arrStrings)
     {
