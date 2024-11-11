@@ -11,6 +11,10 @@ public class UserVector {
         vector = new Vector<>(Arrays.asList(arrayNumbers));
     };
 
+    public UserVector() {
+        vector = new Vector<>();
+    }
+
     static public Double[] splitLine(String line) {
         String[] arrayLine = line.split(" ");
         Double[] arrayNumbers = new Double[arrayLine.length];
