@@ -1,11 +1,23 @@
 package realization;
 
+import java.util.Arrays;
+import java.util.ListIterator;
+import java.util.Vector;
+
 public class UserVector {
 
     private Vector<Double> vector;
 
     public UserVector(Double[] arrayNumbers) {
         vector = new Vector<>(Arrays.asList(arrayNumbers));
+    };
+
+    ListIterator<Double> iterator = vector.listIterator();
+
+    while(iterator.hasNext())
+    {
+        Double element = iterator.next();
+        System.out.println(element);
     };
 
     static public Double[] splitLine(String line) {
