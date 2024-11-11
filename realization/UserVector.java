@@ -14,11 +14,7 @@ public class UserVector {
 
     ListIterator<Double> iterator = vector.listIterator();
 
-    while(iterator.hasNext())
-    {
-        Double element = iterator.next();
-        System.out.println(element);
-    };
+    static public void 
 
     static public Double[] splitLine(String line) {
         String[] arrayLine = line.split(" ");
