@@ -7,21 +7,19 @@ public class UserVector {
 
     private Vector<Boolean> vector;
 
-    public UserVector() {
-
+    public UserVector(boolean arrayNumbers) {
+        vector = new Vector<>(Arrays.asList(arrayNumbers));
     };
 
-    public
-
-    static public void splitLine(String line) {
+    static public boolean[] splitLine(String line) {
         String[] arrayLine = line.split(" ");
-        Boolean[] arrayNumbers;
+        boolean[] arrayNumbers = new boolean[arrayLine.length];
 
         for (int i = 0; i < arrayLine.length; i++) {
             arrayNumbers[i] = Boolean.parseBoolean(arrayLine[i]);
         }
 
-        vector = new Vector<>(Arrays.asList(arrayNumbers));
+        return arrayNumbers;
 
     }
 }
