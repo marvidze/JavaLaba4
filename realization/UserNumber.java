@@ -4,16 +4,17 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Vector;
 
-public class UserVector {
+public class UserNumber {
 
-    private Vector<Double> vector;
+    private double _value;
+    private static Vector<UserNumber> _vector;
 
-    public UserVector(Double[] arrayNumbers) {
-        vector = new Vector<>(Arrays.asList(arrayNumbers));
+    public UserNumber(double value) {
+        _value = value;
     };
 
-    public UserVector() {
-        vector = new Vector<>();
+    public UserNumber() {
+        _value = 0;
     }
 
     static public Double[] splitLine(String line) {

@@ -2,7 +2,7 @@ package UI;
 
 import java.util.Scanner;
 
-import realization.UserVector;
+import realization.UserNumber;
 import realization.UserWriter;
 
 public class UI {
@@ -11,21 +11,31 @@ public class UI {
     };
 
     static private String input() {
-        System.out.println("Введите данные типа double для заполнения вектора");
-        @SuppressWarnings("resource")
-        Scanner scan = new Scanner(System.in);
-        String phoneNumber = scan.nextLine();
-        return phoneNumber;
+        boolean flag = true;
+        while (flag) {
+            try {
+                System.out.println("Введите данные типа double для заполнения вектора");
+                @SuppressWarnings("resource")
+                Scanner scan = new Scanner(System.in);
+                String phoneNumber = scan.nextLine();
+                flag = false;
+                return phoneNumber;
+            } catch (Exception ex) {
+                System.out.println("Введите данные типа DOUBLE ЧЕРЕЗ ПРОБЕЛ!!!");
+            }
+        }
+        return null;
+
     }
 
-    static private void printVector(UserVector vector) {
+    static private void printVector(UserNumber vector) {
         System.out.println(vector.getStringValue());
         System.out.println("");
     }
 
     public void run() {
         String[] arrayData = new String[4];
-        UserVector vector = new UserVector(UserVector.splitLine(input()));
+        UserNumber vector = new UserNumber(UserNumber.splitLine(input()));
         System.out.print("Начальный вектор: ");
         printVector(vector);
         arrayData[0] = vector.getStringValue();
