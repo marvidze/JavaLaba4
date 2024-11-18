@@ -4,17 +4,37 @@ import java.util.Vector;
 
 public class UserNumber {
 
+  /**
+   * Числовое значение элемента вектора
+   */
   private double _value;
+
+  /**
+   * Вектор для хранения элементов
+   */
   private static Vector<UserNumber> _vector;
 
+  /**
+   * Конструктор с параметрами для класса UserNumber
+   * 
+   * @param value Значение элемента вектора
+   */
   public UserNumber(double value) {
     _value = value;
   };
 
+  /**
+   * Конструктор по умолчанию для класса UserNumber
+   */
   public UserNumber() {
     _value = 0;
   }
 
+  /**
+   * Метод разделяет строку на числа типа double и вносит их в статический вектор
+   * 
+   * @param line
+   */
   static public void splitLine(String line) {
     String[] arrayLine = line.split(" ");
     _vector = new Vector<UserNumber>(arrayLine.length);
@@ -25,6 +45,9 @@ public class UserNumber {
 
   }
 
+  /**
+   * Метод сортирует вектор
+   */
   public static void vectorSort() {
     for (int left = 0; left < _vector.size(); left++) {
       int minInd = left;
@@ -41,6 +64,11 @@ public class UserNumber {
 
   }
 
+  /**
+   * Метод создаёт строку значений элементов статического вектора
+   * 
+   * @return строка значений элементов статического вектора
+   */
   public static String getStringValue() {
     String vectorString = new String();
     for (int i = 0; i < _vector.size(); i++) {
@@ -50,13 +78,19 @@ public class UserNumber {
     return vectorString;
   }
 
+  /**
+   * Метод для получения медианного значения статического вектора
+   * 
+   * @return Если длина вектора нечетная - центральный элемент |
+   *         Если длина вектора четная - 2 центральных элемента
+   */
   public static String getMedianValue() {
     if (_vector.size() % 2 != 0) {
-      // Если длина вектора нечетная, возвращаем центральный элемент
+
       Double result = _vector.get(_vector.size() / 2)._value;
       return result.toString();
     } else {
-      // Если длина вектора четная, возвращаем среднее двух центральных элементов
+
       Double firstNumber = _vector.get(_vector.size() / 2 - 1)._value;
       Double secondNumber = _vector.get(_vector.size() / 2)._value;
 
@@ -64,6 +98,11 @@ public class UserNumber {
     }
   }
 
+  /**
+   * Метод для получения среднего значения всех элементов статического вектора
+   * 
+   * @return Среднее значение всех эелементов статического вектора
+   */
   public static String getAverageValue() {
     double sum = 0.0;
     for (UserNumber element : _vector) {

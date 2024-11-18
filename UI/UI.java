@@ -6,10 +6,17 @@ import realization.UserNumber;
 import realization.UserWriter;
 
 public class UI {
-
+  /**
+   * Конструктор класса UI по умолчанию
+   */
   public UI() {
   };
 
+  /**
+   * Метод обрабатывает данные, введённые пользователем в консоль
+   * 
+   * @return Строка данных, введённых пользователем
+   */
   static private String input() {
     boolean flag = true;
     while (flag) {
@@ -28,11 +35,17 @@ public class UI {
 
   }
 
+  /**
+   * Метод выводит содержимое вектора на экран
+   */
   static private void printVector() {
     System.out.println(UserNumber.getStringValue());
     System.out.println("");
   }
 
+  /**
+   * Метод выполняет последовательный вызов функций программы
+   */
   public void run() {
     String[] arrayData = new String[4];
     UserNumber.splitLine(input());
