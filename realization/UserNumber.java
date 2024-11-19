@@ -7,12 +7,17 @@ public class UserNumber {
   /**
    * Числовое значение элемента вектора
    */
-  private double _value;
+  protected double _value;
 
   /**
    * Вектор для хранения элементов
    */
   private static Vector<UserNumber> _vector;
+
+  /**
+   * Итератор для статического вектора _vector
+   */
+  private static UserIterator<UserNumber> _iterator;
 
   /**
    * Конструктор с параметрами для класса UserNumber
@@ -33,7 +38,7 @@ public class UserNumber {
   /**
    * Метод разделяет строку на числа типа double и вносит их в статический вектор
    * 
-   * @param line
+   * @param line Строка с данными
    */
   static public void splitLine(String line) {
     String[] arrayLine = line.split(" ");
@@ -42,6 +47,8 @@ public class UserNumber {
     for (int i = 0; i < arrayLine.length; i++) {
       _vector.add(new UserNumber(Double.parseDouble(arrayLine[i])));
     }
+
+    _iterator = new UserIterator<UserNumber>(_vector);
 
   }
 
@@ -71,8 +78,8 @@ public class UserNumber {
    */
   public static String getStringValue() {
     String vectorString = new String();
-    for (int i = 0; i < _vector.size(); i++) {
-      vectorString += _vector.get(i)._value + " ";
+    while (_iterator.hasNext()) {
+      vectorString += _iterator.next()._value + " ";
     }
 
     return vectorString;
